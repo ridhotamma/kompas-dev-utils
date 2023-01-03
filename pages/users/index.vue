@@ -1,9 +1,10 @@
 <template>
   <v-container fluid>
+    <create-user ref="createUserForm"/>
     <v-row>
       <v-col cols="12" class="d-flex justify-space-between">
         <h3>User List</h3>
-        <v-btn small color="primary">
+        <v-btn @click="openCreateUserForm" small color="primary">
           <v-icon left> mdi-plus </v-icon>
           Add User</v-btn
         >
@@ -33,9 +34,11 @@
 </template>
 
 <script>
+import createUser from '~/components/user-activity/form/createUser.vue'
 import { getProfiles } from '~/services/profiles'
 
 export default {
+  components: { createUser },
   middleware: 'auth',
   name: 'UserIndex',
   data: () => ({
@@ -57,6 +60,10 @@ export default {
       this.profiles = result
       console.log({ result })
     },
+
+    openCreateUserForm() {
+      this.$refs['createUserForm'].toggleDialogVisible()
+    }
   },
 
   mounted() {
