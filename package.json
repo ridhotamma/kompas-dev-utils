@@ -17,7 +17,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "apexcharts": "^3.36.3",
     "core-js": "^3.19.3",
-    "firebase": "9.8.4",
+    "firebase": "9.17.1",
     "nuxt": "^2.15.8",
     "sweetalert2": "^11.4.20",
     "vue": "^2.7.14",
